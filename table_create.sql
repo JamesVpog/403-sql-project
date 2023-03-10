@@ -25,3 +25,20 @@ CREATE TABLE astronaut(
 );
 
 /* \copy astronaut FROM 'astroworld.csv' WITH ( format csv, header); */
+
+
+CREATE TABLE college(
+    major_code NUMERIC(4,0),
+    major TEXT,
+    major_category TEXT,
+    total_count integer,
+    employed_count integer,
+    employed_count_full_time_year_round integer,
+    unemployed_count integer,
+    unemployement_rate double precision,
+    median_earnings integer,
+    p25th_earnings integer,
+    p75th_earnings integer
+);
+
+/* \copy college FROM 'all-ages.csv' WITH ( format csv, header); */
