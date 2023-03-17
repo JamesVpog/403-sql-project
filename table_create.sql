@@ -1,4 +1,6 @@
 
+SET search_path TO s23_group48
+
 /* first dataset creation */
 DROP TABLE IF EXISTS astronaut;
 
@@ -42,3 +44,7 @@ CREATE TABLE college(
 );
 
 /* \copy college FROM 'all-ages.csv' WITH ( format csv, header); */
+
+CREATE TABLE space_missions(
+    
+)
