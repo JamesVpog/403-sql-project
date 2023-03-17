@@ -1,8 +1,12 @@
 
-SET search_path TO s23_group48
+SET search_path TO s23_group48;
 
-/* first dataset creation */
+/* dataset creation */
 DROP TABLE IF EXISTS astronaut;
+
+DROP TABLE IF EXISTS college;
+
+DROP TABLE IF EXISTS space_missions;
 
 CREATE TABLE astronaut(
     name TEXT,
@@ -26,9 +30,6 @@ CREATE TABLE astronaut(
     death_mission TEXT
 );
 
-
-
-
 CREATE TABLE college(
     major_code NUMERIC(4,0),
     major TEXT,
@@ -44,7 +45,7 @@ CREATE TABLE college(
 );
 
 
-
+/* remove price */
 CREATE TABLE space_missions(
     company TEXT,
     location TEXT,
@@ -52,8 +53,14 @@ CREATE TABLE space_missions(
     launch_time TIME,
     rocket TEXT,
     mission_name TEXT,
-    rocket_status CHECK (rocket_status IN ('Retired', 'Active')),
-    price FLOAT, /* drop because it doesnt make sense*/
-    mission_status CHECK (mission_status IN ('Success', 'Failure', 'Partial Failure'))
+    rocket_status TEXT CHECK (rocket_status IN ('Retired', 'Active')),
+    price FLOAT, 
+    mission_status TEXT CHECK (mission_status IN ('Success', 'Failure', 'Partial Failure'))
 );
+
+/* allow access to all tables for everyone in group*/
+
+ALTER TABLE s23_group48.astronaut OWNER TO s23_group48;
+ALTER TABLE s23_group48.college OWNER TO s23_group48;
+ALTER TABLE s23_group48.space_missions OWNER TO s23_group48;
 
