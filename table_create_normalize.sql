@@ -64,3 +64,4 @@ ALTER TABLE s23_group48.astronaut OWNER TO s23_group48;
 ALTER TABLE s23_group48.college OWNER TO s23_group48;
 ALTER TABLE s23_group48.space_missions OWNER TO s23_group48;
 
+ALTER TABLE astronaut ADD COLUMN id SERIAL;

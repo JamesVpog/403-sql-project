@@ -1,5 +1,5 @@
-\copy astronaut FROM 'astroworld.csv' WITH ( format csv, header); 
+\copy astronaut FROM 'data/astroworld.csv' WITH ( format csv, header); 
 
-\copy college FROM 'all-ages.csv' WITH ( format csv, header); 
+\copy college FROM 'data/all-ages.csv' WITH ( format csv, header); 
 
-\copy space_missions FROM 'space_missions.csv' WITH ( format csv, header); 
+\copy space_missions FROM 'data/space_missions2.csv' WITH ( format csv, header, ENCODING 'UTF8'); 

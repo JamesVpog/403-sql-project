@@ -1,0 +1,2 @@
+ALTER TABLE astronaut ADD COLUMN id SERIAL;
+ALTER TABLE astronaut ADD PRIMARY KEY (id);
