@@ -26,7 +26,7 @@ CREATE TABLE astronaut(
     death_mission TEXT
 );
 
-/* \copy astronaut FROM 'astroworld.csv' WITH ( format csv, header); */
+
 
 
 CREATE TABLE college(
@@ -43,8 +43,17 @@ CREATE TABLE college(
     p75th_earnings integer
 );
 
-/* \copy college FROM 'all-ages.csv' WITH ( format csv, header); */
+
 
 CREATE TABLE space_missions(
-    
-)
+    company TEXT,
+    location TEXT,
+    launch_date DATE,
+    launch_time TIME,
+    rocket TEXT,
+    mission_name TEXT,
+    rocket_status CHECK (rocket_status IN ('Retired', 'Active')),
+    price FLOAT, /* drop because it doesnt make sense*/
+    mission_status CHECK (mission_status IN ('Success', 'Failure', 'Partial Failure'))
+);
+

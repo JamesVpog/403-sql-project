@@ -1,0 +1,5 @@
+\copy astronaut FROM 'astroworld.csv' WITH ( format csv, header); 
+
+\copy college FROM 'all-ages.csv' WITH ( format csv, header); 
+
+\copy space_missions FROM 'space_missions.csv' WITH ( format csv, header); 
