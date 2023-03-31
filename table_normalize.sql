@@ -1,2 +1,6 @@
 ALTER TABLE astronaut ADD COLUMN id SERIAL;
 ALTER TABLE astronaut ADD PRIMARY KEY (id);
+
+ALTER TABLE college ADD PRIMARY KEY (major_code);
+ALTER TABLE space_missions ADD COLUMN id SERIAL;
+ALTER TABLE space_missions ADD PRIMARY KEY (id);

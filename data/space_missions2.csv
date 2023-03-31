@@ -3529,8 +3529,8 @@ ISRO,"Second Launch Pad, Satish Dhawan Space Centre, India",2008-10-22,00:52:00,
 CASC,"LC-9, Taiyuan Satellite Launch Center, China",2008-10-25,01:15:00,Long March 4B,Shijian-6E & F,Active,64.68,Success
 ULA,"SLC-2W, Vandenberg AFB, California, USA",2008-10-25,02:28:00,Delta II 7420-10C,COSMO-3,Retired,,Success
 CASC,"LC-2, Xichang Satellite Launch Center, China",2008-10-29,16:53:00,Long March 3B/E,VENESAT 1,Active,29.15,Success
-CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2008-11-05,00:15:00,Long March 2D,Shiyan-3 & Chuangxin-1(02),Active,29.75,Success
-CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2008-11-05,00:15:00,Long March 2D,Shiyan-3 & Chuangxin-1(02),Active,29.75,Success
+CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2008-11-05,00:15:00,Long March 2D,Shiyan-3,Active,29.75,Success
+CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2008-11-05,00:15:00,Long March 2D,Chuangxin-1(02),Active,29.75,Success
 NASA,"LC-39A, Kennedy Space Center, Florida, USA",2008-11-15,00:55:00,Space Shuttle Endeavour,STS-126,Retired,450,Success
 VKS RF,"Site 16/2, Plesetsk Cosmodrome, Russia",2008-12-02,04:59:00,Molniya-M /Block 2BL,Cosmos 2446,Retired,,Success
 Arianespace,"ELA-3, Guiana Space Centre, French Guiana, France",2008-12-20,22:35:00,Ariane 5 ECA,Hot Bird 9 & Eutelsat W2M,Active,200,Success
