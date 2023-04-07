@@ -56,9 +56,6 @@ CREATE TABLE space_missions(
     price TEXT, 
     mission_status TEXT
 );
-/* remove price since it is 72% null*/
-SELECT COUNT(*) AS rows, COUNT(*) - COUNT(price) AS num_nulls_price, (COUNT(*) - COUNT(price)::FLOAT) / COUNT(*) * 100 AS percentage_null FROM space_missions;
-
 
 /* allow access to all tables for everyone in group*/
 

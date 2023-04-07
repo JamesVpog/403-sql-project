@@ -12,6 +12,8 @@ CREATE TABLE college_earnings AS
 ALTER TABLE college_earnings ADD PRIMARY KEY(major, major_code);
 DROP TABLE college;
 
+/* remove price since it is 72% null*/
+--SELECT COUNT(*) AS rows, COUNT(*) - COUNT(price) AS num_nulls_price, (COUNT(*) - COUNT(price)::FLOAT) / COUNT(*) * 100 AS percentage_null FROM space_missions;
 ALTER TABLE space_missions DROP COLUMN price;
 ALTER TABLE astronaut DROP COLUMN college;
 
