@@ -60,6 +60,7 @@ CREATE TABLE space_missions(
 SELECT COUNT(*) AS rows, COUNT(*) - COUNT(price) AS num_nulls_price, (COUNT(*) - COUNT(price)::FLOAT) / COUNT(*) * 100 AS percentage_null FROM space_missions;
 
 ALTER TABLE space_missions DROP COLUMN price;
+ALTER TABLE astronaut DROP COLUMN college;
 /* allow access to all tables for everyone in group*/
 
 ALTER TABLE s23_group48.astronaut OWNER TO s23_group48;
