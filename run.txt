@@ -1,3 +1,4 @@
 \i table_create.sql
 \i copy_cmds.txt
 \i table_normalize.sql
+\i ownership.sql
