@@ -1,5 +1,4 @@
-
-SET search_path TO s23_group48;
+SET search_path to s23_group48;
 
 /* dataset creation */
 DROP TABLE IF EXISTS astronaut;
