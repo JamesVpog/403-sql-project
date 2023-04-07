@@ -14,7 +14,7 @@ DROP TABLE college;
 
 -- normalize space-missions
 ALTER TABLE space_missions ADD COLUMN id SERIAL;
-ALTER TABLE space_missions ADD PRIMARY KEY (id);
+ALTER TABLE space_missions ADD PRIMARY KEY (id, company, mission_name);
 
 -- normalize astronaut 
 ALTER TABLE astronaut ADD COLUMN id SERIAL;
