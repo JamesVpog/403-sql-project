@@ -12,6 +12,9 @@ CREATE TABLE college_earnings AS
 ALTER TABLE college_earnings ADD PRIMARY KEY(major, major_code);
 DROP TABLE college;
 
+ALTER TABLE space_missions DROP COLUMN price;
+ALTER TABLE astronaut DROP COLUMN college;
+
 -- normalize space-missions
 ALTER TABLE space_missions ADD COLUMN id SERIAL;
 ALTER TABLE space_missions ADD PRIMARY KEY (id, company, mission_name);
