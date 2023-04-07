@@ -23,5 +23,5 @@ ALTER TABLE space_missions ADD PRIMARY KEY (id, company, mission_name);
 
 -- normalize astronaut 
 ALTER TABLE astronaut ADD COLUMN id SERIAL;
-ALTER TABLE astronaut ADD PRIMARY KEY (id);
+ALTER TABLE astronaut ADD PRIMARY KEY (id, name);
 
