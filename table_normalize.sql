@@ -21,6 +21,18 @@ ALTER TABLE astronaut DROP COLUMN alma_mater;
 ALTER TABLE space_missions ADD COLUMN id SERIAL;
 ALTER TABLE space_missions ADD PRIMARY KEY (id, company, mission_name);
 
+DROP TABLE IF EXISTS rocket_info;
+CREATE TABLE rocket_info AS 
+    SELECT id, company, mission_name, rocket, rocket_status;
+ALTER TABLE rocket_info ADD PRIMARY KEY (id???, company, mission_name, rocket);
+
+DROP TABLE IF EXISTS mission_info;
+CREATE TABLE mission_info AS
+    SELECT id, company, mission_name, location, launch_time, launch_date, rocket, mission_status;
+ALTER TABLE mission_info ADD PRIMARY KEY (id, company)
+   
+
+
 -- normalize astronaut 
 ALTER TABLE astronaut ADD COLUMN id SERIAL;
 ALTER TABLE astronaut ADD PRIMARY KEY (id);
