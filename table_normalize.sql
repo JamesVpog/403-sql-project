@@ -61,6 +61,6 @@ DROP TABLE astronaut;
 ALTER TABLE astronaut_v2 ADD COLUMN id SERIAL;
 ALTER TABLE astronaut_v2 ADD PRIMARY KEY (id, name);
 
-SELECT name, mission, mission_name, launch_date, ugrad_major 
-FROM astronaut_v2 AS a JOIN space_missions AS s ON levenshtein(a.mission, s.mission_name) < 5; 
+-- SELECT name, mission, mission_name, launch_date, ugrad_major 
+-- FROM astronaut_v2 AS a JOIN space_missions AS s ON levenshtein(a.mission, s.mission_name) < 5; 
 -- ask amelia to add fuzzystrmatch to s23_group48 schema so I can easily match mission names to each other based on levenshtein distance
