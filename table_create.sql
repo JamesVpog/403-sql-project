@@ -43,8 +43,6 @@ CREATE TABLE college(
     p75th_earnings integer
 );
 
-
-
 CREATE TABLE space_missions(
     company TEXT,
     location TEXT,
