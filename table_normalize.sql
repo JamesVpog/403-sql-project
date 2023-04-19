@@ -17,6 +17,11 @@ CREATE TABLE college_earnings AS
 ALTER TABLE college_earnings ADD PRIMARY KEY(major, major_code);
 DROP TABLE college;
 
+--foreign key
+ALTER TABLE college_employment_statistics 
+ADD CONSTRAINT anything2 FOREIGN KEY (major_code, major) 
+REFERENCES college_earnings(major_code, major);
+
 -- normalize space-missions by BCNF
 ALTER TABLE space_missions ADD COLUMN id SERIAL;
 ALTER TABLE space_missions ADD PRIMARY KEY (id, company, mission_name);
@@ -31,8 +36,13 @@ DROP TABLE IF EXISTS mission_info;
 CREATE TABLE mission_info AS
     SELECT id, company, mission_name, location, launch_time, launch_date, rocket, mission_status
     FROM space_missions;
-ALTER TABLE mission_info ADD PRIMARY KEY (id, company);
+ALTER TABLE mission_info ADD PRIMARY KEY (id, company, mission_name, rocket);
 DROP TABLE space_missions;
+
+--foreign key
+ALTER TABLE rocket_info 
+ADD CONSTRAINT anything FOREIGN KEY (id, company, mission_name, rocket) 
+REFERENCES mission_info(id, company, mission_name, rocket);
 
 -- normalize astronaut by BCNF
 DROP TABLE IF EXISTS astronaut_v2;
@@ -61,6 +71,3 @@ DROP TABLE astronaut;
 ALTER TABLE astronaut_v2 ADD COLUMN id SERIAL;
 ALTER TABLE astronaut_v2 ADD PRIMARY KEY (id, name);
 
--- SELECT name, mission, mission_name, launch_date, ugrad_major 
--- FROM astronaut_v2 AS a JOIN space_missions AS s ON levenshtein(a.mission, s.mission_name) < 5; 
--- ask amelia to add fuzzystrmatch to s23_group48 schema so I can easily match mission names to each other based on levenshtein distance
