@@ -1,3 +1,8 @@
+-- drop unnecessary attributes; remove price since it is 72% null
+--SELECT COUNT(*) AS rows, COUNT(*) - COUNT(price) AS num_nulls_price, (COUNT(*) - COUNT(price)::FLOAT) / COUNT(*) * 100 AS percentage_null FROM space_missions;
+ALTER TABLE space_missions DROP COLUMN price;
+ALTER TABLE astronaut DROP COLUMN alma_mater;
+
 --normalize college dataset by BCNF
 DROP TABLE IF EXISTS college_employment_statistics;
 DROP TABLE IF EXISTS college_earnings;
@@ -12,12 +17,7 @@ CREATE TABLE college_earnings AS
 ALTER TABLE college_earnings ADD PRIMARY KEY(major, major_code);
 DROP TABLE college;
 
-/* remove price since it is 72% null*/
---SELECT COUNT(*) AS rows, COUNT(*) - COUNT(price) AS num_nulls_price, (COUNT(*) - COUNT(price)::FLOAT) / COUNT(*) * 100 AS percentage_null FROM space_missions;
-ALTER TABLE space_missions DROP COLUMN price;
-ALTER TABLE astronaut DROP COLUMN alma_mater;
-
--- normalize space-missions
+-- normalize space-missions by BCNF
 ALTER TABLE space_missions ADD COLUMN id SERIAL;
 ALTER TABLE space_missions ADD PRIMARY KEY (id, company, mission_name);
 
@@ -32,9 +32,9 @@ CREATE TABLE mission_info AS
     SELECT id, company, mission_name, location, launch_time, launch_date, rocket, mission_status
     FROM space_missions;
 ALTER TABLE mission_info ADD PRIMARY KEY (id, company);
-   
+DROP TABLE space_missions;
 
--- normalize astronaut 
+-- normalize astronaut by BCNF
 DROP TABLE IF EXISTS astronaut_v2;
 CREATE TABLE astronaut_v2 AS 
     SELECT name, 
