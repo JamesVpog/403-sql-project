@@ -1,12 +1,18 @@
 import re
 import pandas as pd
 
+# fixes the astroworld.csv and space_missions.csv to be able to join them
+
+# outputs the cleaned dataset, astroworld2.csv and space_missions3.csv
+
+
 def remove_parenthesis_and_content(string):
-    return re.sub(r'\([^()]*\)', '', string)
+    return re.sub(r'\([^()]*\)', '', re.sub(r'-|\s', '', string))
 
 def remove_everything_after_left_parenthesis(string):
     #and everything after a comma because bcnf
     substr = re.sub(r'\(.*$', '', string)
+    substr = re.sub(r'-|\s', '', substr)
     return re.sub(r'\,.*$', '', substr)
      
 #astronaut fix, stored in astroworld2.csv
