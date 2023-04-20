@@ -33,3 +33,11 @@ FROM
         astronaut_v2 AS a 
         JOIN mission_info AS s ON a.mission = s.mission_name
     WHERE DATE_PART('year', launch_date) - DATE_PART('year', birth_date) > 50) as cte;
+    JOIN astronaut_v2 AS a ON lower(e.major) = lower(a.ugrad_major);
+
+-- Average age on each mission
+SELECT a.mission, m.launch_date, 
+AVG (DATE_PART('year', m.launch_date)-DATE_PART('YEAR', A.birth_date))AS avg_age
+FROM astronaut_v2 AS a JOIN mission_info AS m ON a.mission = m.mission_name
+GROUP BY a.mission, m.launch_date
+ORDER BY m.launch_date;
