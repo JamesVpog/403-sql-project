@@ -34,9 +34,9 @@ ALTER TABLE rocket_info ADD PRIMARY KEY (id, company, mission_name, rocket);
 
 DROP TABLE IF EXISTS mission_info;
 CREATE TABLE mission_info AS
-    SELECT id, company, mission_name, location, launch_time, launch_date, mission_status
+    SELECT id, company, mission_name, location, launch_time, launch_date, mission_status, rocket
     FROM space_missions;
-ALTER TABLE mission_info ADD PRIMARY KEY (id, company, mission_name);
+ALTER TABLE mission_info ADD PRIMARY KEY (id, company, mission_name, rocket);
 DROP TABLE space_missions;
 
 --foreign key

@@ -1,5 +1,3 @@
-TODO: add how to use artifacts  (connect.py, fix.py, run.txt)
-
 How to reproduce data
 'run.txt' reproduces the entire s23_group48 database on codd. Running this in codd will create the normalized tables, as 'run.txt' itself executes three .sql files and one .txt file.
 Simply typing '\i run.txt' in codd is sufficient to reproduce the tables. (The 'ownership.sql' file may need to be removed from 'run.txt' for grading purposes. More on that below.) 
