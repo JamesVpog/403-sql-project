@@ -22,7 +22,7 @@ df3["Missions"] = df3["Missions"].map(remove_parenthesis_and_content, na_action=
 df3.to_csv('data/astroworld2.csv', sep=",", index=False, header=True)
 
 
-# space_missions fix, stored in all_missions.csv
+# space_missions fix, stored in new space_missions.csv files
 ## remove extraneous missions and mission info
 df = pd.read_csv("data/space_missions2.csv")
 
